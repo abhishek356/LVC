@@ -1,6 +1,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
+    
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +13,16 @@
 <form:form action = "process-form" method = "Get" modelAttribute = "userInfo">
 
 <h1 align="center">Love Calculator</h1>
+<sec:authorize access="isAuthenticated()">
+<form:form action="logout" method="POST">
+<input type = "submit" value = "logout">
+</form:form>
+</sec:authorize>
 <hr/>
-<h2>Please Register here !</h2>
+<h2>Please Register here !</h2> 
+<sec:authorize access="hasAuthority('ADMIN')">
+<a href="UpdateRoles" >Manage Users</a>
+</sec:authorize>
 <p>
 <label for ="userName">Your Name:</label>
 <input type = "text" id="userName" name="userName"/>

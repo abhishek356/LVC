@@ -13,6 +13,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<spring.version>5.2.6.RELEASE</spring.version>
+		<spring.security>5.3.3.RELEASE</spring.security>
+		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,7 +28,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.2.16.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
@@ -35,6 +38,26 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.2.9.RELEASE</version>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-taglibs</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.28</version>
+</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core 
 <dependency>
     <groupId>org.springframework.security</groupId>
@@ -46,7 +69,7 @@
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-config</artifactId>
-    <version>5.2.12.RELEASE</version>
+    <version>${spring.security}</version>
 </dependency>
 
 
@@ -62,7 +85,7 @@
 <dependency>
     <groupId>org.springframework.security</groupId>
     <artifactId>spring-security-web</artifactId>
-    <version>5.2.12.RELEASE</version>
+    <version>${spring.security}</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
